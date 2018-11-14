@@ -163,8 +163,27 @@ public class ComplexTest {
     @Test
     void testSquaredModulus(){
         Complex c1 = new Complex(2, 2);
-        Complex c2 = new Complex(16, 16);
-        assertEquals(c1.squaredModulus(),c2);
+
+        assertEquals(c1.squaredModulus(),8);
+
+    }
+    @Test
+    void testModulus(){
+        Complex c1 = new Complex(2, 2);
+        assertEquals(c1.modulus(),Math.sqrt(2*2+2*2));
+
+    }
+    @Test
+    void testPow(){
+        Complex c1 = new Complex(2, 2);
+        Complex c2 = new Complex(1,1);
+
+
+        assertEquals(c1.pow(0), c2);
+        assertEquals(c1.pow(1),c1);
+        assertEquals(c1.pow(2),c1.multiply(c1));
+
+
 
     }
 }
