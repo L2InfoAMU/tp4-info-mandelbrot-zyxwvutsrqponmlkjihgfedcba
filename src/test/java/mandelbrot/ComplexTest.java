@@ -180,10 +180,24 @@ public class ComplexTest {
 
 
         assertEquals(c1.pow(0), c2);
-        assertEquals(c1.pow(1),c1);
+      assertEquals(c1.pow(1),c1);
         assertEquals(c1.pow(2),c1.multiply(c1));
 
 
 
+    }
+    @Test
+    void testscale(){
+        Complex c2 = new Complex(2,0);
+        Complex c1 = new Complex(2, 2);
+        assertEquals(c1.multiply(c2),c1.scale(2));
+    }
+    @Test
+    void testequals(){
+        Complex c2 = new Complex(2,2);
+        Complex c1 = new Complex(2, 2);
+        Complex c3 = new Complex(1, 2);
+        assertEquals(c1.equals(c2),true);
+        assertEquals(c1.equals(c3),false);
     }
 }
